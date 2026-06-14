@@ -6,7 +6,5 @@
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_stage")
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("2_player")]
 position = Vector2(0, 0)

@@ -8,4 +8,3 @@ extends Resource
 @export var detection_range: float = 200.0
 @export var attack_range: float = 120.0
 @export var scrap_drop: int = 5
-@export var fire_rate: float = 2.0

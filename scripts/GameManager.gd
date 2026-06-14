@@ -11,7 +11,6 @@ var scrap: int = 0
 var upgrade_damage: int = 0   # 0~2 (3단계)
 var upgrade_defense: int = 0  # 0~2 (3단계)
 var last_stage_result: Dictionary = {}
-var has_quest_item: bool = false
 
 # ── 씬 전환 ──────────────────────────────────────────
 
@@ -32,9 +31,6 @@ func add_scrap(amount: int) -> void:
 
 func lose_all_scrap() -> void:
 	scrap = 0
-
-func pick_up_quest_item() -> void:
-	has_quest_item = true
 
 # ── 강화 스탯 계산 ────────────────────────────────────
 
