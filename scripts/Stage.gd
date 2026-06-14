@@ -2,6 +2,10 @@ extends Node2D
 
 const TILE_SIZE := 64
 
+const ENEMY_RIFLE_SCENE := preload("res://scenes/enemies/enemy_rifle.tscn")
+const ENEMY_BURST_SCENE := preload("res://scenes/enemies/enemy_burst.tscn")
+const ENEMY_ELITE_SCENE := preload("res://scenes/enemies/enemy_elite.tscn")
+
 # 0 = 바닥, 1 = 벽/엄폐물
 const MAP_LAYOUT := [
 	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
@@ -21,19 +25,20 @@ const MAP_LAYOUT := [
 	[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 ]
 
-# 적 스폰 위치 (row, col) — EnemyBase 씬 추가 시 사용
-const ENEMY_SPAWN_CELLS := [
-	Vector2i(2, 15),
-	Vector2i(4, 10),
-	Vector2i(8, 5),
-	Vector2i(11, 12),
-	Vector2i(12, 17),
+# (scene, row, col) — 마지막 항목은 반드시 elite
+const ENEMY_SPAWN_DEFS := [
+	["rifle",  2, 15],
+	["rifle",  4, 10],
+	["burst",  8,  5],
+	["rifle", 11, 12],
+	["elite", 12, 17],
 ]
 
 func _ready() -> void:
 	QuestManager.reset()
 	_setup_navigation()
 	_build_map()
+	_spawn_enemies()
 
 func _setup_navigation() -> void:
 	var nav_region := $NavigationRegion2D as NavigationRegion2D
@@ -77,5 +82,18 @@ func _spawn_wall(parent: Node2D, x: float, y: float) -> void:
 
 	parent.add_child(body)
 
-func register_enemy_count(count: int) -> void:
-	QuestManager.register_enemies(count)
+func _spawn_enemies() -> void:
+	var container: Node2D = $Enemies
+	for def in ENEMY_SPAWN_DEFS:
+		var scene: PackedScene
+		match def[0]:
+			"rifle": scene = ENEMY_RIFLE_SCENE
+			"burst": scene = ENEMY_BURST_SCENE
+			"elite": scene = ENEMY_ELITE_SCENE
+		var enemy: Node2D = scene.instantiate()
+		enemy.global_position = Vector2(
+			def[2] * TILE_SIZE + TILE_SIZE * 0.5,
+			def[1] * TILE_SIZE + TILE_SIZE * 0.5
+		)
+		container.add_child(enemy)
+	QuestManager.register_enemies(ENEMY_SPAWN_DEFS.size())

@@ -75,6 +75,7 @@ func die() -> void:
 	state = State.DEAD
 	if data:
 		GameManager.add_scrap(data.scrap_drop)
+	QuestManager.on_enemy_killed(false)
 	_on_die()
 	queue_free()
 
