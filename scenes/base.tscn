@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/Base.gd" id="1_base0"]
+
+[node name="Base" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_base0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "귀환 기지"
+
+[node name="ScrapLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "보유 스크랩: 0"
+
+[node name="ResultLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = ""
+
+[node name="DmgUpgradeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "데미지 강화"
+
+[node name="DefUpgradeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "방어 강화"
+
+[node name="StageButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "스테이지 입장"

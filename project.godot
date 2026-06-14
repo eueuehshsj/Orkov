@@ -13,6 +13,11 @@ config_version=5
 config/name="Enter to Orkov"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+config/run/main_scene="res://scenes/main_menu.tscn"
+
+[autoload]
+
+GameManager="*res://scripts/GameManager.gd"
 
 [physics]
 
@@ -21,3 +26,4 @@ config/icon="res://icon.svg"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
