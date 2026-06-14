@@ -1,6 +1,8 @@
 class_name EnemyBase
 extends CharacterBody2D
 
+const SCRAP_SCENE := preload("res://scenes/scrap.tscn")
+
 enum State { PATROL, CHASE, ATTACK, DEAD }
 
 @export var data: EnemyData
@@ -73,8 +75,11 @@ func take_damage(amount: float) -> void:
 
 func die() -> void:
 	state = State.DEAD
-	if data:
-		GameManager.add_scrap(data.scrap_drop)
+	if data and data.scrap_drop > 0:
+		var scrap: Node = SCRAP_SCENE.instantiate()
+		scrap.amount = data.scrap_drop
+		scrap.global_position = global_position
+		get_tree().current_scene.add_child(scrap)
 	_on_die()
 	queue_free()
 

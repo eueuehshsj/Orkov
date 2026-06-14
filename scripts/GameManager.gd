@@ -13,15 +13,23 @@ var upgrade_defense: int = 0  # 0~2 (3단계)
 var last_stage_result: Dictionary = {}
 var has_quest_item: bool = false
 
+var _stage_scrap_at_start: int = 0
+
 # ── 씬 전환 ──────────────────────────────────────────
 
 func go_to_main_menu() -> void:
 	get_tree().change_scene_to_file(SCENE_MAIN_MENU)
 
 func go_to_stage() -> void:
+	_stage_scrap_at_start = scrap
+	has_quest_item = false
 	get_tree().change_scene_to_file(SCENE_STAGE)
 
 func go_to_base(result: Dictionary = {}) -> void:
+	if not result.has("scrap_gained"):
+		result["scrap_gained"] = scrap - _stage_scrap_at_start
+	if not result.has("quest_complete"):
+		result["quest_complete"] = has_quest_item
 	last_stage_result = result
 	get_tree().change_scene_to_file(SCENE_BASE)
 
