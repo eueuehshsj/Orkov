@@ -1,0 +1,12 @@
+[gd_resource type="WeaponData" script_class="WeaponData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/WeaponData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+weapon_name = "슬러거"
+damage = 12.0
+attack_range = 300.0
+cooldown = 0.8
+accuracy = 0.85
+is_melee = false
