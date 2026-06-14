@@ -27,4 +27,4 @@ func take_damage(amount: int) -> void:
 
 func die() -> void:
 	GameManager.lose_all_scrap()
-	GameManager.go_to_base({"success": false, "died": true})
+	GameManager.go_to_base({"success": false, "died": true, "scrap_gained": 0, "quest_complete": false})
