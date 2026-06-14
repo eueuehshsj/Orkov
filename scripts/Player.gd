@@ -8,7 +8,6 @@ var current_hp: int
 func _ready() -> void:
 	motion_mode = MOTION_MODE_FLOATING
 	current_hp = max_hp
-	add_to_group("player")
 
 func _physics_process(_delta: float) -> void:
 	var dir := Vector2(
