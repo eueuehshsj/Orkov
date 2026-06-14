@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scripts/Stage.gd" id="1_stage"]
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
 [ext_resource type="PackedScene" path="res://scenes/extraction_point.tscn" id="3_extraction"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="4_hud"]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_stage")
@@ -22,3 +23,5 @@ position = Vector2(160, 480)
 
 [node name="ExtractionPoint" parent="." instance=ExtResource("3_extraction")]
 position = Vector2(1120, 160)
+
+[node name="HUD" parent="." instance=ExtResource("4_hud")]
