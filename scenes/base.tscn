@@ -29,6 +29,14 @@ text = "보유 스크랩: 0"
 layout_mode = 2
 text = ""
 
+[node name="AcquiredLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = ""
+
+[node name="QuestLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = ""
+
 [node name="DmgUpgradeButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "데미지 강화"
@@ -39,4 +47,4 @@ text = "방어 강화"
 
 [node name="StageButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "스테이지 입장"
+text = "다음 스테이지"
