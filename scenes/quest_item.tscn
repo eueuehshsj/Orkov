@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/quest_item.gd" id="1_quest"]
+[ext_resource type="Texture2D" uid="uid://bqfiard25pnkn" path="res://icon.svg" id="2_icon"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 16.0
+
+[node name="QuestItem" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+monitoring = true
+monitorable = false
+script = ExtResource("1_quest")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.9, 0.1, 1)
+texture = ExtResource("2_icon")
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
