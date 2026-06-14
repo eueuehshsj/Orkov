@@ -26,15 +26,15 @@
 
 전투 검증의 핵심 주체.
 
-- [ ] **탑다운 이동** (`CharacterBody2D`)
+- [x] **탑다운 이동** (`CharacterBody2D`)
   - WASD 8방향 이동, `move_and_slide()`
   - 마우스 방향으로 회전 (데프 드레드 포탑 느낌)
-- [ ] **카메라** (`Camera2D`)
+- [x] **카메라** (`Camera2D`)
   - 플레이어 추적, 부드러운 이동 (`position_smoothing`)
-- [ ] **체력 시스템**
+- [x] **체력 시스템**
   - `max_hp`, `current_hp`, `take_damage()`, `die()` 함수
   - 사망 시 GameManager에 실패 신호 전달
-- [ ] **히트박스 / 헐트박스**
+- [x] **히트박스 / 헐트박스**
   - `CollisionShape2D` 분리 (물리 충돌용 vs 피격 판정용)
 
 ---
