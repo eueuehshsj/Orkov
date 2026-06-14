@@ -7,4 +7,5 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		GameManager.pick_up_quest_item()
+		QuestManager.on_quest_item_picked_up()
 		queue_free()

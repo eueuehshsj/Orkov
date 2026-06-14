@@ -75,6 +75,9 @@ func take_damage(amount: float) -> void:
 
 func die() -> void:
 	state = State.DEAD
+	if data:
+		GameManager.add_scrap(data.scrap_drop)
+	QuestManager.on_enemy_killed(false)
 	if data and data.scrap_drop > 0:
 		var scrap: Node = SCRAP_SCENE.instantiate()
 		scrap.amount = data.scrap_drop

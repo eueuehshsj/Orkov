@@ -1,12 +1,24 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/Stage.gd" id="1_stage"]
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/extraction_point.tscn" id="3_extraction"]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_stage")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 
+[node name="TileMap" type="TileMap" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("2_player")]
-position = Vector2(0, 0)
+position = Vector2(160, 480)
+
+[node name="ExtractionPoint" parent="." instance=ExtResource("3_extraction")]
+position = Vector2(1120, 160)
