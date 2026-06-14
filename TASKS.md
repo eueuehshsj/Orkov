@@ -8,16 +8,16 @@
 
 게임 루프의 뼈대. 이게 없으면 나머지를 붙일 곳이 없다.
 
-- [ ] **폴더 구조 정리**
+- [x] **폴더 구조 정리**
   - `scenes/`, `scripts/`, `assets/`, `resources/` 기본 디렉토리 생성
-- [ ] **데이터 구조 정의** (`Resource` 클래스)
+- [x] **데이터 구조 정의** (`Resource` 클래스)
   - `WeaponData.gd` — 무기 스탯(데미지, 사거리, 쿨다운, 명중률)
   - `EnemyData.gd` — 적 스탯(체력, 공격력, 이동속도, 탐지 범위)
   - `UpgradeData.gd` — 강화 항목(데미지+, 방어+ 각 3단계)
-- [ ] **GameManager 싱글톤**
+- [x] **GameManager 싱글톤**
   - 씬 전환 함수 (`go_to_stage()`, `go_to_base()`)
   - 전역 상태 보관 (스크랩 보유량, 강화 레벨, 현재 스테이지 결과)
-- [ ] **씬 구조 설계**
+- [x] **씬 구조 설계**
   - `main_menu.tscn` → `stage.tscn` → `base.tscn` 전환 흐름 확정
 
 ---
