@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/melee_claw.gd" id="1_claw"]
+
+[node name="MeleeClaw" type="Node2D"]
+script = ExtResource("1_claw")
+
+[node name="ClawHitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClawHitbox"]
+polygon = PackedVector2Array(0, 0, 40, -69.28, 61.28, -51.42, 75.18, -27.36, 80, 0, 75.18, 27.36, 61.28, 51.42, 40, 69.28)

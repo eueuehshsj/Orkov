@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_slot.gd" id="1_slot"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/melee_claw.tscn" id="2_claw"]
+[ext_resource type="PackedScene" path="res://scenes/weapons/slugger.tscn" id="3_slugger"]
+[ext_resource type="Resource" path="res://resources/claw_data.tres" id="4_clawdata"]
+[ext_resource type="Resource" path="res://resources/slugger_data.tres" id="5_sluggerdata"]
+
+[node name="WeaponSlot" type="Node2D"]
+script = ExtResource("1_slot")
+
+[node name="MeleeClaw" parent="." instance=ExtResource("2_claw")]
+data = ExtResource("4_clawdata")
+
+[node name="Slugger" parent="." instance=ExtResource("3_slugger")]
+data = ExtResource("5_sluggerdata")
