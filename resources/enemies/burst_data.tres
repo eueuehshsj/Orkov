@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EnemyData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+enemy_name = "버스트"
+max_hp = 80.0
+attack_damage = 8.0
+move_speed = 90.0
+detection_range = 200.0
+attack_range = 120.0
+scrap_drop = 8
+fire_rate = 2.5

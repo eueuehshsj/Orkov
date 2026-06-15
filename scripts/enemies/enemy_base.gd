@@ -39,7 +39,7 @@ func _do_patrol(_delta: float) -> void:
 	pass
 
 func _do_chase(_delta: float) -> void:
-	if not is_instance_valid(_player):
+	if not is_instance_valid(_player) or not data:
 		state = State.PATROL
 		return
 	if global_position.distance_to(_player.global_position) <= data.attack_range:
@@ -48,7 +48,7 @@ func _do_chase(_delta: float) -> void:
 	_navigate_to(_player.global_position)
 
 func _do_attack(_delta: float) -> void:
-	if not is_instance_valid(_player):
+	if not is_instance_valid(_player) or not data:
 		state = State.PATROL
 		return
 	if global_position.distance_to(_player.global_position) > data.attack_range * 1.1:
