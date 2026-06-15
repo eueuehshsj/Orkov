@@ -9,6 +9,10 @@ var _lifetime: float = 2.0
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	body_entered.connect(_on_body_entered)
+	queue_redraw()
+
+func _draw() -> void:
+	draw_circle(Vector2.ZERO, 4.0, Color.YELLOW)
 
 func _process(delta: float) -> void:
 	position += direction * speed * delta

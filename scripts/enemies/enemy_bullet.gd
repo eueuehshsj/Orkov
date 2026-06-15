@@ -10,6 +10,10 @@ var direction: Vector2 = Vector2.RIGHT
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	get_tree().create_timer(LIFETIME).timeout.connect(queue_free)
+	queue_redraw()
+
+func _draw() -> void:
+	draw_circle(Vector2.ZERO, 4.0, Color.RED)
 
 func _process(delta: float) -> void:
 	position += direction * SPEED * delta
