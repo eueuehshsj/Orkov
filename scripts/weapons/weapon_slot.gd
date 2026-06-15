@@ -6,7 +6,5 @@ extends Node2D
 
 var current_weapon: Weapon
 
-signal weapon_changed(weapon: Weapon)
-
 func _ready() -> void:
 	current_weapon = claw
