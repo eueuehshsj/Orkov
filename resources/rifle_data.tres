@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/data/EnemyData.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+enemy_name = "소총병"
+max_hp = 60.0
+attack_damage = 8.0
+move_speed = 80.0
+detection_range = 200.0
+attack_range = 220.0
+scrap_drop = 5
+fire_rate = 2.0
