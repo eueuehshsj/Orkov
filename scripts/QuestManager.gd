@@ -18,7 +18,7 @@ func register_enemies(count: int) -> void:
 	total_enemies = count
 	_killed_count = 0
 
-func on_enemy_killed(is_elite: bool = false) -> void:
+func on_enemy_killed(_is_elite: bool = false) -> void:
 	_killed_count += 1
 	if _killed_count >= total_enemies and total_enemies > 0:
 		all_enemies_killed = true
