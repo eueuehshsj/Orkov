@@ -75,8 +75,8 @@ func _update_extraction_arrow() -> void:
 
 	var dir := (ext_world_pos - screen_center).normalized()
 	var half := viewport_size * 0.5
-	var tx := abs(half.x / dir.x) if dir.x != 0.0 else INF
-	var ty := abs(half.y / dir.y) if dir.y != 0.0 else INF
+	var tx: float = abs(half.x / dir.x) if dir.x != 0.0 else INF
+	var ty: float = abs(half.y / dir.y) if dir.y != 0.0 else INF
 	var t: float = min(tx, ty) - 50.0
 
 	extraction_arrow.position = half + dir * t - Vector2(15.0, 15.0)
