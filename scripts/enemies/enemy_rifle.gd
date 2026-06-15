@@ -8,7 +8,7 @@ const BULLET_SCENE := preload("res://scenes/enemies/enemy_bullet.tscn")
 var _waypoint_idx: int = 0
 var _attack_cooldown: float = 0.0
 
-func _do_patrol(delta: float) -> void:
+func _do_patrol(_delta: float) -> void:
 	if waypoints.is_empty():
 		velocity = Vector2.ZERO
 		move_and_slide()
